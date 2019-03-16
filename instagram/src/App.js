@@ -14,8 +14,7 @@ class App extends Component {
   }
   
   componentDidMount() {
-    setTimeout(() => { this.setState(prevState => { return { data: dummyData }})},2000);
-    console.log(this.state.data);
+    setTimeout(() => { this.setState(prevState => { return { data: dummyData }})},1000);
   }
 
   render() {

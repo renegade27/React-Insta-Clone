@@ -12,6 +12,10 @@ class CommentSection extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.setState({likes:this.props.likes});
+    }
+
     inputChange = e => {
         this.setState({ newComment : {username: "guest", text: e.target.value}});
     }
@@ -19,7 +23,7 @@ class CommentSection extends React.Component {
     commentCreation = e => {
         e.preventDefault();
         if(this.state.newComment.text === "") { return 'No text to post' };
-        this.setState(prevState => { return { comments: [...prevState.comments, this.state.newComment] }})
+        this.setState(prevState => { return { comments: [...prevState.comments, this.state.newComment], newComment: {username: "guest", text: ""} }})
         console.log(this.state.comments);
     }
 

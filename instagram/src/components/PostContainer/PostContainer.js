@@ -16,7 +16,7 @@ const PostContainer = ({post}) => {
                 </img>
             </div>
             <div className="post-comments">
-                <CommentSection comments={post.comments} />
+                <CommentSection likes={post.likes} comments={post.comments} />
             </div>
         </>
     );
