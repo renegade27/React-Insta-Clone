@@ -7,16 +7,16 @@ const PostContainer = ({post}) => {
         <>
             <div className="post-content">
                 <div className="content-row">
-                    <img src={post.thumbnailUrl} className="user-badge">
+                    <img alt="usrbadge"src={post.thumbnailUrl} className="user-badge">
                     </img>
                     <p className="username"> {post.username}</p>
-                    <i className="fas fa-ellipsis-h"></i>
+                    {/* <i className="fas fa-ellipsis-h"></i> */}
                 </div>
-                <img className="post-image" src={post.imageUrl}>
+                <img alt="pstimg" className="post-image" src={post.imageUrl}>
                 </img>
             </div>
             <div className="post-comments">
-
+                <CommentSection comments={post.comments} />
             </div>
         </>
     );

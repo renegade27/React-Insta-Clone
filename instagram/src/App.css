@@ -4,12 +4,22 @@
   margin: 0 auto;
 }
 
+p {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+nav {
+  height: 50px;
+  margin: 0;
+}
+
 .post {
   display: flex;
-  padding: 2.5% 0;
-  border: 0.5px solid black;
-  width: 70%;
+  padding: 0 0 2.5% 0;
+  border: 0.25px solid rgb(0, 0, 0, 0.6);
+  width: 60%;
   margin: 7.0% 0;
+  flex-wrap: wrap;
 }
 
 .page-wrapper {
