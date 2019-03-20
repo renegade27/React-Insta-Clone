@@ -1,0 +1,30 @@
+* {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+.login-page {
+    margin-top: 200px;
+    font-size: 3.0rem;
+    font-family: "Ubuntu Condensed", sans-serif;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.login-input {
+    margin-bottom: 50px;
+    width: 60%;
+    height: 100px;
+    padding: 0px 100px;
+}
+
+.login-button {
+    width: 60%;
+    height: 100px;
+    padding: 0px 100px;
+}
