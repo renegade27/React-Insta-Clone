@@ -2,21 +2,20 @@ import React from 'react';
 import "./PostContainer.css";
 import CommentSection from '../CommentSection/CommentSection'
 
-const PostContainer = ({post}) => {
+const PostContainer = props => {
     return (
         <>
             <div className="post-content">
                 <div className="content-row">
-                    <img alt="usrbadge"src={post.thumbnailUrl} className="user-badge">
+                    <img alt="usrbadge"src={props.post.thumbnailUrl} className="user-badge">
                     </img>
-                    <p className="username"> {post.username}</p>
-                    {/* <i className="fas fa-ellipsis-h"></i> */}
+                    <p className="username"> {props.post.username}</p>
                 </div>
-                <img alt="pstimg" className="post-image" src={post.imageUrl}>
+                <img alt="pstimg" className="post-image" src={props.post.imageUrl}>
                 </img>
             </div>
             <div className="post-comments">
-                <CommentSection likes={post.likes} comments={post.comments} />
+                <CommentSection likes={props.post.likes} comments={props.post.comments} />
             </div>
         </>
     );

@@ -7,7 +7,7 @@ class CommentSection extends React.Component {
         this.state = {
             likes : 0,
             liked : false,
-            newComment : { username: "guest", text: ""},
+            newComment : { username: localStorage.getItem('username'), text: ""},
             comments : props.comments
         }
     }
@@ -17,7 +17,7 @@ class CommentSection extends React.Component {
     }
 
     inputChange = e => {
-        this.setState({ newComment : {username: "guest", text: e.target.value}});
+        this.setState({ newComment : {username: localStorage.getItem('username'), text: e.target.value}});
     }
 
     commentCreation = e => {
@@ -60,6 +60,7 @@ class CommentSection extends React.Component {
                         type='text' 
                         onChange={this.inputChange}
                     />
+                    <i className="fas fa-ellipsis-h"></i>
                 </form>
             </div>
         );
