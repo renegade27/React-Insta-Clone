@@ -15,7 +15,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    localStorage.setItem('loggedin', false);
     this.setState({isLoggedIn:localStorage.getItem('loggedin')});
   }
 
