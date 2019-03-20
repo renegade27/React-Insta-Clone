@@ -15,7 +15,7 @@ class PostsPage extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => { this.setState({ data: dummyData, filteredData: dummyData })},1000);
+        this.setState({ data: dummyData, filteredData: dummyData });
     }
 
     logout(callback) {
