@@ -4,9 +4,15 @@
 }
 
 .login-page {
-    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     font-size: 3.0rem;
     font-family: "Ubuntu Condensed", sans-serif;
+}
+
+.login-logo {
+    margin: 10px 0;
 }
 
 form {
@@ -17,6 +23,8 @@ form {
 }
 
 .login-input {
+    font-size: 3.0rem;
+    text-align: start;
     margin-bottom: 50px;
     width: 60%;
     height: 100px;
@@ -24,7 +32,20 @@ form {
 }
 
 .login-button {
-    width: 60%;
+    cursor: pointer;
+    width: 45%;
+    border-radius: 10px;
+    font-family: "Ubuntu Condensed", sans-serif;
+    font-size: 3.0rem;
+    opacity: 0.70;
+    color: white;
+    background-color: blue;
     height: 100px;
     padding: 0px 100px;
+}
+
+.login-button:hover {
+    width: 47.5%;
+    opacity: 1.0;
+    transition: 1s;
 }

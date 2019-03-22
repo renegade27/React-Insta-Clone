@@ -24,10 +24,11 @@ class Login extends React.Component {
     render() {
         return (
             <div className="login-page">
+                <img className='login-logo' src={process.env.PUBLIC_URL + 'Naught-logo.png'} />
                 <form onSubmit={this.props.formHandler}>
                     <input
                         className="login-input"
-                        type="text"
+                        type="username"
                         name="username"
                         placeholder="Username..."
                         value={this.state.username}
@@ -35,7 +36,7 @@ class Login extends React.Component {
                     /> 
                     <input
                         className="login-input"
-                        type="text"
+                        type="password"
                         name="password"
                         placeholder="Password..."
                         value={this.state.password}
