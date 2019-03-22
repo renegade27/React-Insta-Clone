@@ -15,7 +15,7 @@ class PostsPage extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ data: dummyData, filteredData: dummyData });
+        this.setState({ data: dummyData, filteredData: dummyData, });
     }
 
     logout(callback) {
@@ -27,6 +27,9 @@ class PostsPage extends React.Component {
     }
 
     render() {
+        if (localStorage.getItem(`commentsfortnite0`) === null || undefined) {
+            dummyData.map(post => localStorage.setItem(`comments${post.id}`, JSON.stringify(post.comments)))
+        }
         return (
         <div className="page-wrapper">
             <nav>

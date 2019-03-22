@@ -8,12 +8,18 @@ class CommentSection extends React.Component {
             likes : 0,
             liked : false,
             newComment : { username: localStorage.getItem('username'), text: ""},
-            comments : props.comments
+            comments : this.props.comments,
+            updatedComments : this.props.comments
         }
     }
 
     componentDidMount() {
-        this.setState({likes:this.props.likes});
+        this.setState(prevState => { return {
+            likes:this.props.likes, 
+            comments : this.props.comments,
+            updatedComments : JSON.parse(localStorage.getItem(`comments${this.props.id}`)),
+            newComment : { username: localStorage.getItem('username'), text: ""}
+        }});
     }
 
     inputChange = e => {
@@ -22,29 +28,36 @@ class CommentSection extends React.Component {
 
     commentCreation = e => {
         e.preventDefault();
-        if(this.state.newComment.text === "") { return 'No text to post' };
-        this.setState(prevState => { return { comments: [...prevState.comments, this.state.newComment], newComment: {username: "guest", text: ""} }})
-        console.log(this.state.comments);
+        if(this.state.newComment.text === "") { return 'No text to post' }
+        let a = JSON.parse(localStorage.getItem(`comments${this.props.id}`));
+        a.push(this.state.newComment);
+        localStorage.setItem(`comments${this.props.id}`, JSON.stringify(a));
+        this.setState(prevState => { return { 
+            comments: [...prevState.comments, this.state.newComment], 
+            updatedComments: a,
+            newComment: {username: "guest", text: ""} 
+        }})
     }
 
     likeHandler = e => {
         this.setState(prevState => { return { 
             likes: (this.state.liked ? prevState.likes-1 : prevState.likes+1), 
-            liked: !this.state.liked
+            liked: !prevState.liked
         }
     })
     }
 
     render() {
+        console.log(this.state.updatedComments);
         return (
             <div className="comment-section">
                 <div className="click-icons">
-                    <i onClick={this.likeHandler} className={this.state.liked ?"fas fa-heart" : "far fa-heart"}></i>
+                    <i onClick={this.likeHandler} className={this.state.liked ? "fas fa-heart" : "far fa-heart"}></i>
                     <i className="far fa-comment"></i>
                 </div>
                 <p className="likes">{this.state.likes} Likes</p>
                 <div className="comments">
-                    { this.state.comments.map( comment => { return (
+                    { this.state.updatedComments.map( comment => { return (
                         <div className="comment">
                             <p className="comment-username">{comment.username}</p>
                             <p className="comment-content">{comment.text}</p>

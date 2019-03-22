@@ -21,7 +21,6 @@ const withAuthenticate = ComponentOne => ComponentTwo => {
         }
 
         logHandler = event => {
-            console.log(this);
             this.setState(prevState=>{return{isLoggedIn:prevState.isLoggedIn==="true"?'false':'true'}});
             this.props.userChange(this.state.isLoggedIn);
         }
