@@ -15,7 +15,6 @@ const withAuthenticate = ComponentOne => ComponentTwo => {
         }
 
         formHandler = event => {
-            event.preventDefault();
             this.setState(prevState=>{return{isLoggedIn:prevState.isLoggedIn==="true"?'false':'true'}});
             this.props.userChange(this.state.isLoggedIn);
         }
@@ -26,6 +25,7 @@ const withAuthenticate = ComponentOne => ComponentTwo => {
         }
 
         render() {
+            console.log("HOC rerender");
             return (
             <>
                 {this.state.isLoggedIn==="true" ? 

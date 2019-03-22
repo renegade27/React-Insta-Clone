@@ -1,5 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 import './Login.css';
+
+const LoginPage = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 3.0rem;
+    font-family: "Ubuntu Condensed", sans-serif;
+`;
 
 class Login extends React.Component {
     constructor(props) {
@@ -23,7 +32,7 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="login-page">
+            <LoginPage>
                 <img className='login-logo' src={process.env.PUBLIC_URL + 'Naught-logo.png'} />
                 <form onSubmit={this.props.formHandler}>
                     <input
@@ -44,7 +53,7 @@ class Login extends React.Component {
                     /> 
                     <button className="login-button" onClick={this.dataHandler}>Login</button>
                 </form>
-            </div>
+            </LoginPage>
         );
     }
 }

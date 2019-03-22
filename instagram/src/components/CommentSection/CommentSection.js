@@ -8,15 +8,13 @@ class CommentSection extends React.Component {
             likes : 0,
             liked : false,
             newComment : { username: localStorage.getItem('username'), text: ""},
-            comments : this.props.comments,
             updatedComments : this.props.comments
         }
     }
 
     componentDidMount() {
         this.setState(prevState => { return {
-            likes:this.props.likes, 
-            comments : this.props.comments,
+            likes: this.props.likes, 
             updatedComments : JSON.parse(localStorage.getItem(`comments${this.props.id}`)),
             newComment : { username: localStorage.getItem('username'), text: ""}
         }});
@@ -33,7 +31,6 @@ class CommentSection extends React.Component {
         a.push(this.state.newComment);
         localStorage.setItem(`comments${this.props.id}`, JSON.stringify(a));
         this.setState(prevState => { return { 
-            comments: [...prevState.comments, this.state.newComment], 
             updatedComments: a,
             newComment: {username: "guest", text: ""} 
         }})
