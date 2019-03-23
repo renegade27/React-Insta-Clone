@@ -31,7 +31,7 @@ class CommentSection extends React.Component {
         a.push(this.state.newComment);
         localStorage.setItem(`comments${this.props.id}`, JSON.stringify(a));
         this.setState(prevState => { return { 
-            updatedComments: a,
+            updatedComments: [...prevState.updatedComments, a],
             newComment: {username: "guest", text: ""} 
         }})
     }
@@ -45,7 +45,7 @@ class CommentSection extends React.Component {
     }
 
     render() {
-        console.log(this.state.updatedComments);
+        console.log('comment section remade!')
         return (
             <div className="comment-section">
                 <div className="click-icons">

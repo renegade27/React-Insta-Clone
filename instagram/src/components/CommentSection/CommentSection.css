@@ -62,7 +62,7 @@ form {
 }
 
 .comment-content {
-    margin-left: 5px;
+    margin:0 0 0 5px;
     width: 90%;
     font-size: 1.4rem;
 }
