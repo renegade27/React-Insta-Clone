@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  margin: 0 auto;
+}
+
+p {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+nav .nav-icons i:hover {
+  opacity: 1.0;
+  transition: 0.75s;
+}
+
+.post {
+  display: flex;
+  padding: 0 0 1% 0;
+  border: 0.25px solid rgb(0, 0, 0, 0.6);
+  width: 60%;
+  margin: 2.5% 0;
+  flex-wrap: wrap;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1140px;
+}
+
+.loading {
+  margin-top: 100px;
+  font-size: 6rem;
+  font-weight: bolder;
+}
